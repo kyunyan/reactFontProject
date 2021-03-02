@@ -1,6 +1,7 @@
 import React, {useEffect} from "react";
+import Antd, {} from 'antd'
 
-function userListPage(){
+function UserListPage(){
     //const dispatch = useDispatch();
 
     //useEffect(() => {
@@ -14,4 +15,4 @@ function userListPage(){
     )
 }
 
-export default userListPage;
+export default UserListPage;
