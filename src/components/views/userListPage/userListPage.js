@@ -9,7 +9,7 @@ function UserListPage(){
     const url = "http://localhost:8080"
     useEffect(() => {
         axios.get(url+`/user/findUserList`)
-        .then(response => { 
+        .then(response => {  debugger;
             setUserList(response.data);
         })
         .catch(err => alert(err))

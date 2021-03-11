@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 import {Route, Switch } from "react-router-dom";
 
+import Footer from './components/views/Fotter/Footer.js';
 import UserListPage from "./components/views/userListPage/userListPage.js";
 
 function App(){
@@ -12,6 +13,7 @@ function App(){
 
           </Switch>
       </div>
+      <Footer />
     </Suspense>
   )
 
