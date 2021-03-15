@@ -1,18 +1,25 @@
 import React, {useEffect, useState} from "react";
+import { findUserList } from "../../../_actions/user_actions";
 import axios from 'axios'
 import { Row, Col, Divider } from 'antd';
+import { useDispatch } from "react-redux";
 
 function UserListPage(){
-    //const dispatch = useDispatch();
+    const dispatch = useDispatch();
     const [UserList, setUserList] = useState([]);
 
     const url = "http://localhost:8080"
     useEffect(() => {
-        axios.get(url+`/user/findUserList`)
-        .then(response => {  debugger;
-            setUserList(response.data);
-        })
-        .catch(err => alert(err))
+        // axios.get(url+`/user/findUserList`)
+        // .then(response => {  debugger;
+        //     setUserList(response.data);
+        // })
+        // .catch(err => alert(err))
+        dispatch(findUserList())
+            .then(response => {
+                setUserList(response.payload);
+
+            })
     },[]);
 
     const gridMain = UserList.map((userInfo) => {
