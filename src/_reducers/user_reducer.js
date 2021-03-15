@@ -1,32 +1,12 @@
-import {
-    LOGIN_USER,
-    REGISTER_USER,
-    AUTH_USER,
-    LOGOUT_USER,
-    ADD_TO_CART,
-    GET_CART_ITMES
-} from '../_actions/types';
+
+import { findUserList } from '../_actions/user_actions';
  
 
-export default function(state={},action){
+export default function(state={},action){ debugger;
     switch(action.type){
-        case REGISTER_USER:
-            return {...state, register: action.payload }
-        case LOGIN_USER:
-            return { ...state, loginSucces: action.payload }
-        case AUTH_USER:
-            return {...state, userData: action.payload }
-        case LOGOUT_USER:
+        case findUserList:
             return {...state }
-        case ADD_TO_CART:
-            return {...state, 
-                userData: {
-                    ...state.userData ,
-                    cart : action.payload
-                } 
-            }
-        case GET_CART_ITMES : 
-             return {...state, cartDetail: action.payload }        
+           
         default:
             return state;
     }
